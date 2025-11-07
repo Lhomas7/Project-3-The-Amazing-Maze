@@ -12,7 +12,6 @@ class UnionFind {
 
 	private:
 		std::vector<int> parent;
-		std::vector<int> rank;
 };
 
 #endif
