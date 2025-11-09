@@ -3,7 +3,7 @@
 
 #include "UnionFind.h"
 
-UnionFind::UnionFind(int n) : parent{} {
+UnionFind::UnionFind(int n) : parent{}, rank(10, 0) {
     parent.reserve(n);
     for (int i = 0; i < n; ++i) {
         parent.push_back(i);
@@ -26,6 +26,10 @@ void UnionFind::unite(int i, int j) {
     else {
         parent[parentI] = parentJ;
     }
+}
+
+bool UnionFind::connected(int x, int y) {
+    return find(x) == find(y);
 }
 
 #endif

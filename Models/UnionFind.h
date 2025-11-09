@@ -8,10 +8,12 @@ class UnionFind {
 	public:
 		UnionFind(int);
 		int find(int);
-		void unite(int i, int j);
+		void unite(int, int);
+		bool connected(int, int);
 
 	private:
 		std::vector<int> parent;
+		std::vector<int> rank;
 };
 
 #endif
