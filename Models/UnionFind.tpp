@@ -13,7 +13,8 @@ UnionFind::UnionFind(int n) : parent{}, rank(10, 0) {
 
 int UnionFind::find(int n) {
     if (parent[n] == n) return n;
-    return find(parent[n]);
+    parent[n] = find(parent[n]);
+    return parent[n];
 }
 
 void UnionFind::unite(int i, int j) {
