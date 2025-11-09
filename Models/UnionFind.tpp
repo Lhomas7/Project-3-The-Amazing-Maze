@@ -24,8 +24,15 @@ void UnionFind::unite(int i, int j) {
     if (parentI == parentJ) {
         std::cout << "same tree" << std::endl;
     }
+    if (rank[parentI] < rank[parentJ]) {
+        parent[parentI] = parentJ;
+    }
+    else if (rank[parentI] > rank[parentJ]) {
+        parent[parentJ] = parentI;
+    }
     else {
         parent[parentI] = parentJ;
+        rank[parentI] += 1;
     }
 }
 
