@@ -19,7 +19,7 @@ int UnionFind::find(int n) {
 
 void UnionFind::unite(int i, int j) {
     int parentI = find(i);
-    int parentJ = find(J);
+    int parentJ = find(j);
 
     if (parentI == parentJ) {
         std::cout << "same tree" << std::endl;
